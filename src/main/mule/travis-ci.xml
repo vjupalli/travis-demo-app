@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="7efac5a0-b49c-47cc-907a-e8303ea04595" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="travis-ciFlow" doc:id="b94ad824-2303-47ac-b695-f42a4c8e150d" >
+		<http:listener doc:name="Listener" doc:id="2920a685-7892-4261-86dd-f7e4eccf06b9" config-ref="HTTP_Listener_config" path="/travisci"/>
+		<logger level="INFO" doc:name="Logger" doc:id="2002ed14-0f90-4d10-9bf3-61754b375c6b" message="Testing Travis CI *******"/>
+		<set-payload value="#[payload]" doc:name="Set Payload" doc:id="62f5df10-bdc4-4f23-b5a2-3626eb1c563e" />
+	</flow>
+</mule>
