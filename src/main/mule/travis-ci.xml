@@ -11,5 +11,6 @@ http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/htt
 		<http:listener doc:name="Listener" doc:id="2920a685-7892-4261-86dd-f7e4eccf06b9" config-ref="HTTP_Listener_config" path="/travisci"/>
 		<logger level="INFO" doc:name="Logger" doc:id="2002ed14-0f90-4d10-9bf3-61754b375c6b" message="Testing Travis CI *******"/>
 		<set-payload value="#[payload]" doc:name="Set Payload" doc:id="62f5df10-bdc4-4f23-b5a2-3626eb1c563e" />
+		<logger level="INFO" doc:name="Logger" doc:id="4aaea41c-5e64-4b65-9d71-aca0b7ec7b43" />
 	</flow>
 </mule>
